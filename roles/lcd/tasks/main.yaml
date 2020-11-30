@@ -11,6 +11,7 @@
     - /boot/firmware/usercfg.txt
     - /boot/firmware/config.txt
     - /boot/firmware/syscfg.txt
+    - /etc/x11/xinit/.xinitrc
 
 
 - name: Configuring /boot/firmware/usercfg.txt
@@ -88,10 +89,30 @@
 - name: Copying .xinitrc
   copy:
     src: .xinitrc
-    dest: ~/.xinitrc
+    dest: /etc/x11/xinit/.xinitrc
     owner: root
     group: root
-    mode: 0644
+    mode: 0755
+
+
+- name: Copying .profile
+  copy:
+    src: .profile
+    dest: ~/.profile
+    owner: root
+    group: root
+    mode: 0755
+
+
+
+- name: Copying autologin override
+  copy: 
+    src: override.conf
+    dest: /etc/systemd/system/getty@tty1.service.d/override.conf
+    owner: root
+    group: root
+    mode: 0755
+
 
 
 - name: Cloning git repo LCD-show

@@ -6,14 +6,15 @@
 
 
 - name: Installing packages
+  apt: install_recommends=no 
   package:
     name: "{{ item }}"
   loop:
-  - xserver-xorg-video-all  
   - xserver-xorg-input-evdev
   - xserver-xorg-core
   - xinit
   - x11-xserver-utils
   - chromium-browser
   - unclutter
+  - alsa-utils
 
