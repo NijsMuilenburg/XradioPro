@@ -10,6 +10,7 @@
     - /boot/firmware/cmdline.txt
     - /boot/firmware/usercfg.txt
     - /boot/firmware/config.txt
+    - /boot/firmware/syscfg.txt
 
 
 - name: Configuring /boot/firmware/usercfg.txt
@@ -22,8 +23,21 @@
       dtparam=spi=on
       enable_uart=1
       dtoverlay=waveshare35a
+      dtoverlay=hifiberry-dac
       hdmi_drive=2
       disable_overscan=1
+
+- name: Configuring /boot/firmware/syscfg.txt
+  blockinfile:
+    path: /boot/firmware/syscfg.txt
+    insertafter: partition
+    block: |
+      enable_uart=1
+      #dtparam=audio=on
+      dtparam=i2c_arm=on
+      dtparam=spi=on
+      cmdline=cmdline.txt
+
 
 
 - name: Configuring /boot/firmware/cmdline.txt
@@ -66,6 +80,15 @@
   copy:
     src: /usr/share/X11/xorg.conf.d/10-evdev.conf
     dest: /usr/share/X11/xorg.conf.d/45-evdev.conf
+    owner: root
+    group: root
+    mode: 0644
+
+
+ - name: Copying .xinitrc
+  copy:
+    src: .xinitrc
+    dest: ~/.xinitrc
     owner: root
     group: root
     mode: 0644

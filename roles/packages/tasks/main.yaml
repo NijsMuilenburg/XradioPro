@@ -9,6 +9,11 @@
   package:
     name: "{{ item }}"
   loop:
-    - xubuntu-desktop
-    - xserver-xorg-input-evdev
+  - xserver-xorg-video-all  
+  - xserver-xorg-input-evdev
+  - xserver-xorg-core
+  - xinit
+  - x11-xserver-utils
+  - chromium-browser
+  - unclutter
 
