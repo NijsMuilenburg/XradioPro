@@ -85,7 +85,7 @@
     mode: 0644
 
 
- - name: Copying .xinitrc
+- name: Copying .xinitrc
   copy:
     src: .xinitrc
     dest: ~/.xinitrc
