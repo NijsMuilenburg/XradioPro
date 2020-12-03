@@ -6,7 +6,7 @@
 
 
 - name: Installing packages
-  apt: install_recommends=no 
+  apt: 
   package:
     name: "{{ item }}"
   loop:
@@ -26,3 +26,4 @@
   - libssl-dev 
   - uuid-dev 
   - unzip
+  install_recommends=no

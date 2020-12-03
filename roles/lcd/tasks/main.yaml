@@ -11,7 +11,7 @@
     - /boot/firmware/usercfg.txt
     - /boot/firmware/config.txt
     - /boot/firmware/syscfg.txt
-    - /etc/x11/xinit/.xinitrc
+    
 
 
 - name: Configuring /boot/firmware/usercfg.txt
@@ -85,6 +85,15 @@
     owner: root
     group: root
     mode: 0644
+
+
+ - name: Creating /etc/X11/xinit
+  file:
+    path: /etc/X11/xinit
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
 
 
 - name: Copying .xinitrc
