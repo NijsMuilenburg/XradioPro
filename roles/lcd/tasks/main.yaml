@@ -26,6 +26,7 @@
       dtoverlay=waveshare35a
       dtoverlay=hifiberry-dac
       hdmi_drive=2
+      disable_splash=1
       disable_overscan=1
 
 - name: Configuring /boot/firmware/syscfg.txt
