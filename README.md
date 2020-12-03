@@ -1,6 +1,6 @@
 # waveshare35-rpi3b-ubuntu-20.04-64
 
-This Ansible playbook will configure your Raspberry Pi Model 3 B running Ubuntu Server 20.04 (64-bit) to work with a Waveshare 3.5inch RPi LCD (A).
+This Ansible playbook will configure your Raspberry Pi Model 4 B running Ubuntu Server 20.04 (64-bit) to work with a Waveshare 3.5inch RPi LCD (A).
 
 ![](http://www.lcdwiki.com/images/4/44/MPI3501-001.jpg)
 
@@ -13,8 +13,6 @@ Other links:
 + [GitHub: lcdwiki/LCD-show-ubuntu](https://github.com/lcdwiki/LCD-show-ubuntu)
 
 #### Pre-install Notes
-+ Make a backup of your Pi. I'm not responsible for any damage or files lost during the install process
-+ Execute all steps as root
 
 Instructions
 ---
@@ -30,13 +28,13 @@ b. Download the ansible repo to '/root'
 ```none
 # cd
 
-# git clone "https://github.com/victorbrca/waveshare35-rpi3b-ubuntu-20.04-64.git"
+# git clone 'https://github.com/NijsMuilenburg/XradioPro'
 ```
 
 c. Change into the project directory and run the Ansible playbook
 
 ```
-# cd waveshare35-rpi3b-ubuntu-20.04-64
+# cd XradioPro
 
 # ansible-playbook playbook.yaml
 ```
