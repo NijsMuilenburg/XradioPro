@@ -10,20 +10,21 @@
   package:
     name: "{{ item }}"
   loop:
-  - xserver-xorg-input-evdev
-  - xserver-xorg-core
-  - xinit
-  - x11-xserver-utils
-  - chromium-browser
-  - unclutter
-  - alsa-utils
-  - libunwind8 
-  - libunwind8-dev 
-  - gettext 
-  - libicu-dev 
-  - liblttng-ust-dev 
-  - libcurl4-openssl-dev 
-  - libssl-dev 
-  - uuid-dev 
-  - unzip
-  install_recommends=no
+    - xubuntu-desktop
+    - xserver-xorg-input-evdev
+    - xserver-xorg-core
+    - xinit
+    - xterm
+    - x11-xserver-utils
+    - chromium-browser
+    - unclutter
+    - alsa-utils
+    - libunwind8 
+    - libunwind8-dev 
+    - gettext 
+    - libicu-dev 
+    - liblttng-ust-dev 
+    - libcurl4-openssl-dev 
+    - libssl-dev 
+    - uuid-dev 
+    - unzip

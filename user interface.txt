@@ -1,0 +1,25 @@
+User Interface for touchscreen
+•	Should run on a 480*320 pixels resolution touchscreen
+•	Angular or Vue.JS
+•	Hosted on local webserver on Raspberry PI
+•	Interface should be similar to normal Xradio 
+•	Horizontal caroussel with settings – channel 
+
+Er is een interface beschikbaar voor onderhoud en technische handelingen.
+API CALLS onderhoudsinterface:
+POST http://localhost:8000/audio/volume/{volume:int}
+POST http://localhost:8000/audio/mute
+POST http://localhost:8000/audio/unmute
+POST http://localhost:8000/audio/play
+POST http://localhost:8000/audio/pause
+POST http://localhost:8000/audio/test
+GET http://localhost:8000/management
+POST http://localhost:8000/management/forcecontentdownload
+POST http://localhost:8000/management/forceconfigdownload
+POST http://localhost:8000/management/reset
+De onderhoudsinterface is gebouwd als een REST api om simpele commando’s te kunnen geven.
+Internal Functions: 
+http://localhost:8000/audio/debugtimeslots
+http://localhost:8000/audio/debugplaylists
+
+

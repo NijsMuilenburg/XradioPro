@@ -1,0 +1,120 @@
+
+
+nl-cd-255255-028.aac weeknd.aac
+NL-CD-001961-003.aac booty.aac
+NL-CD-001269-004.aac abc.aac
+nl-cd-251872-006.aac puth.aac
+
+
+plympouth:
+sudo apt-cache policy plymouth 
+returns version
+
+find themes:
+sudo apt-cache search plymouth-theme
+install themes:
+sudo apt-get install plymouth-theme-solar
+theme cannot be found
+install all possible themes:
+sudo apt-get install plymouth-theme-*
+
+download theme, unzip and install in usr/share/plymouth/themes/Nijs
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/Nijs/
+
+
+test om te kijken of plymouth theme goed werkt
+https://askubuntu.com/questions/775301/unable-to-use-a-custom-splash-screen-in-ubuntu-16-04lts
+sudo plymouthd --debug  ; sudo plymouth --show-splash ; for ((I=0;I<10;I++)); do sleep 1 ; sudo plymouth --update=event$I ; done ; sudo plymouth --quit 
+
+
+
+sample playlist
+
+http://ip/player/playlist 
+
+[
+    {
+        "name": "Demo XAP",
+        "tracks": [
+             {
+                "title": "MP3testfile",
+                "url": "demo_renamed.mp3",
+		        "begincue": 5000,
+		        "endcue": 25000
+            },
+            {
+                "title": "Booty",
+                "url": "booty_backup.aac",
+		        "begincue": 15000,
+		        "endcue": 214000
+            },
+            {
+                "title": "Weekend",
+                "url": "weeknd_backup.aac"
+                "begincue": 2000,
+		        "endcue": 236000
+            },
+            {
+                "title": "ABC",
+                "url": "abc_backup.aac",
+                "begincue": 5000,
+		        "endcue": 25000
+            },
+            {
+                 "title" : "Bruno Mars - Chunky",
+                 "url" : "nl-cd-252411-005.aac",
+                 "begincue": 1000,
+		        "endcue": 185000
+            },
+            {
+                "title": "Chef's Special - Try Again",
+                "url": "nl-cd-252610-010.aac",
+                "begincue": 1000,
+		        "endcue": 236000
+            },
+            {
+                "title": "Dua Lipa - Good in Bed",
+                "url": "nl-cd-255283-032.aac",
+                "begincue": 1000,
+		        "endcue": 218000
+            },
+            {
+                "title": "Eve Ft. Gwen Stefani - Let Me Blow Ya Mind",
+                "url": "NL-CM-001373-001.aac",
+                "begincue": 000,
+		        "endcue": 230000
+            },
+            {
+                "title": "Purple Disco Machine Ft. Joe Killington & Duane Ha - Devil In Me (Radio Edit)",
+                "url": "nl-cd-253008-001.aac",
+                "begincue": 1000,
+		        "endcue": 195000
+            },
+              {
+                "title": "Weeknd - Blinding Lights",
+                "url": "nl-cd-254930-067.aac",
+                "begincue": 1000,
+		        "endcue": 198000
+            }            ,
+              {
+                "title": "Calvin Harris & Weeknd - Over Now",
+                "url": "nl-cd-255878-002.aac",
+                "begincue": 1000,
+		        "endcue": 207000
+            }
+        ],
+        "schedule": [
+            {
+                "start": "2020-12-11T11:00:00Z",
+                "end": "2020-12-13T23:59:00Z"
+            }
+        ]
+    }
+]
+
+set volume: 
+http://ip-player/player/config
+
+{
+    "PlayVolume" : 15
+}

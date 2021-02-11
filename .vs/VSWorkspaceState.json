@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\roles",
+    "\\roles\\lcd",
+    "\\roles\\lcd\\files",
+    "\\roles\\lcd\\tasks",
+    "\\roles\\lcd\\vars",
+    "\\roles\\packages",
+    "\\roles\\packages\\tasks",
+    "\\roles\\packages\\vars"
+  ],
+  "SelectedNode": "\\roles\\packages\\vars\\main.yaml",
+  "PreviewInSolutionExplorer": false
+}

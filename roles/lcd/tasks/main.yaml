@@ -86,45 +86,6 @@
     group: root
     mode: 0644
 
-
- - name: Creating /etc/X11/xinit
-  file:
-    path: /etc/X11/xinit
-    state: directory
-    owner: root
-    group: root
-    mode: 0755
-
-
-- name: Copying .xinitrc
-  copy:
-    src: .xinitrc
-    dest: /etc/x11/xinit/.xinitrc
-    owner: root
-    group: root
-    mode: 0755
-
-
-- name: Copying .profile
-  copy:
-    src: .profile
-    dest: ~/.profile
-    owner: root
-    group: root
-    mode: 0755
-
-
-
-- name: Copying autologin override
-  copy: 
-    src: override.conf
-    dest: /etc/systemd/system/getty@tty1.service.d/override.conf
-    owner: root
-    group: root
-    mode: 0755
-
-
-
 - name: Cloning git repo LCD-show
   git:
     repo: "https://github.com/waveshare/LCD-show.git"
@@ -141,3 +102,63 @@
   loop:
     - waveshare35a.dtb
     - waveshare35a.dtbo
+
+- name: Creating /etc/X11/xinit
+  file:
+    path: /etc/X11/xinit
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+
+- name: Copying .xinitrc
+  copy:
+    src: .xinitrc
+    dest: /etc/X11/xinit/.xinitrc
+    owner: root
+    group: root
+    mode: 0755
+
+
+- name: Copying .profile
+  copy:
+    src: .profile
+    dest: ~/.profile
+    owner: root
+    group: root
+    mode: 0755
+
+
+- name: Create autologin override service dir
+  file:
+    path: "/etc/systemd/system/getty@tty1.service.d"
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+    
+
+
+- name: Copying autologin override
+  copy: 
+    src: override.conf
+    dest: /etc/systemd/system/getty@tty1.service.d/override.conf
+    owner: root
+    group: root
+    mode: 0755
+
+
+- name: Configuring all users to start Xserver
+    replace:
+      path: /etc/X11/Xwrapper.config
+      regexp: "allowed_users=console"
+      replace: "allowed_users=anybody"
+
+
+- name: Disable services if enabled
+  shell: if systemctl is-enabled --quiet {{ item }}; then systemctl disable {{ item }} && echo disable_ok ; fi
+  register: output
+  changed_when: "'disable_ok' in output.stdout"
+  loop:
+    - gdm3
