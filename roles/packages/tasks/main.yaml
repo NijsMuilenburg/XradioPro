@@ -6,11 +6,9 @@
 
 
 - name: Installing packages
-  apt: 
   package:
     name: "{{ item }}"
   loop:
-    - xubuntu-desktop
     - xserver-xorg-input-evdev
     - xserver-xorg-core
     - xinit
@@ -28,3 +26,4 @@
     - libssl-dev 
     - uuid-dev 
     - unzip
+    - nginx

@@ -111,6 +111,10 @@
     group: root
     mode: 0755
 
+# to do remove unhidden xinitrc
+# ~/.xinitrc is handy to run programs depending on X and set environment variables on X server startup. 
+# If it is present in a user's home directory, startx and xinit execute it. 
+# Otherwise startx will run the default /etc/X11/xinit/xinitrc.
 
 - name: Copying .xinitrc
   copy:
@@ -134,9 +138,9 @@
   file:
     path: "/etc/systemd/system/getty@tty1.service.d"
     state: directory
-    mode: 0755
     owner: root
     group: root
+    mode: 0755
     
 
 
@@ -150,10 +154,10 @@
 
 
 - name: Configuring all users to start Xserver
-    replace:
-      path: /etc/X11/Xwrapper.config
-      regexp: "allowed_users=console"
-      replace: "allowed_users=anybody"
+  replace:
+    path: /etc/X11/Xwrapper.config
+    regexp: "allowed_users=console"
+    replace: "allowed_users=anybody"
 
 
 - name: Disable services if enabled

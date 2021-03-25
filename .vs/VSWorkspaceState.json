@@ -10,6 +10,6 @@
     "\\roles\\packages\\tasks",
     "\\roles\\packages\\vars"
   ],
-  "SelectedNode": "\\roles\\packages\\vars\\main.yaml",
+  "SelectedNode": "\\roles\\lcd\\files\\override.conf",
   "PreviewInSolutionExplorer": false
 }
