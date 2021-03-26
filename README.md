@@ -56,6 +56,9 @@ TASK [packages : Running apt-get update and upgrade] ***************************
 
 - - -
 
+Do not forget to actually run the driver.
+
+
 **Reference:**
 + [GitHub: goodft/LCD-show](https://github.com/goodtft/LCD-show)
 + [Raspberry Pi Forums: 480x320 Touchscreen](https://www.raspberrypi.org/forums/viewtopic.php?p=977889#p977889)

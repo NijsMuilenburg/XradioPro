@@ -1,9 +1,9 @@
 ---
 # tasks file for packages
 
-- name: Running apt-get update and upgrade
-  apt: upgrade=yes update_cache=yes
-
+#- name: Running apt-get update and upgrade
+#  apt: upgrade=yes update_cache=yes
+# commented out for making the test quicker.
 
 - name: Installing packages
   package:
